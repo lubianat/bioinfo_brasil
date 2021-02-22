@@ -2,5 +2,11 @@
 
 ```sh
 cd UFRN
-scrapy crawl profs -o ../profs.csv
+scrapy crawl profs -o ../results/profs.csv
+```
+
+# Reconcile
+
+```sh
+python reconcile.py
 ```
