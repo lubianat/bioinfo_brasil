@@ -10,6 +10,7 @@
 - It would be cool to have a dropdown menu. 
 - Maybe add tutorial at the end. 
 * Scrape mails of the programs and send the Google Forms?
+* We have a list of PPGS emails 
 
 * It would be nice to have a tutorial on how to add 
 
