@@ -20,9 +20,13 @@ Bebendo da estrutura do Wikidata, o Scholia gera visualizações automáticas,qu
 
 - Artigos ([Evolution and epidemic spread of SARS-CoV-2 in Brazil](https://scholia.toolforge.org/work/Q97681095))
 
-![Número de publicações por ano do [Helder Nakaya](https://scholia.toolforge.org/author/Q42614737)](https://cdn-images-1.medium.com/max/2000/1*Nt3TNgUDFfs9o5t2V1qoFQ.png)_Número de publicações por ano do [Helder Nakaya](https://scholia.toolforge.org/author/Q42614737)_
+![Número de publicações por ano do [Helder Nakaya](https://scholia.toolforge.org/author/Q42614737)](https://cdn-images-1.medium.com/max/2000/1*Nt3TNgUDFfs9o5t2V1qoFQ.png)
 
-![Artigos mais recentes publicados por pessoas do [Programa de pós em bioinformática da USP](https://scholia.toolforge.org/organization/Q102292035)](https://cdn-images-1.medium.com/max/2000/1*BdqlCdsbQ3atNl4vGgTHtw.png)_Artigos mais recentes publicados por pessoas do [Programa de pós em bioinformática da USP](https://scholia.toolforge.org/organization/Q102292035)_
+_Número de publicações por ano do [Helder Nakaya](https://scholia.toolforge.org/author/Q42614737)_
+
+![Artigos mais recentes publicados por pessoas do [Programa de pós em bioinformática da USP](https://scholia.toolforge.org/organization/Q102292035)](https://cdn-images-1.medium.com/max/2000/1*BdqlCdsbQ3atNl4vGgTHtw.png)
+
+_Artigos mais recentes publicados por pessoas do [Programa de pós em bioinformática da USP](https://scholia.toolforge.org/organization/Q102292035)_
 
 O desafio é que os scripts não conseguem puxar tudo. Muitos autores tem nomes parecido e informações como afiliação a programas de pós-graduação nem sempre são fáceis de achar.
 
@@ -58,7 +62,9 @@ Se nosso objetivo é adicionar um pesquisador, o primeiro passo é ver se ele j�
 
 Obs: Aperte um enter para fazer uma busca com mais profundidade.
 
-![achou](https://cdn-images-1.medium.com/max/2000/1*Idn2f8GbbX_kODLWXF0DTg.png)_achou_
+![achou](https://cdn-images-1.medium.com/max/2000/1*Idn2f8GbbX_kODLWXF0DTg.png)
+
+_achou_
 
 - Se achar um _item_ para sua pessoa de interesse, pode pular o passo 2 e ir direto para o passo 3. Se não achar, sem problemas, vamos adicionar no passo 2.
 
@@ -85,7 +91,9 @@ O item criado agora ainda não tem nenhuma informação ligada. Caso seja um ite
 
 - De qualquer forma, no fim dessa lista, há um botão escrito “**+ adicionar declaração**”/ “**+add statement**”. Clique nele:
 
-![(pode ser + add statement)](https://cdn-images-1.medium.com/max/2000/1*--_ug30DZG5lM_FSuP0ASw.png)_(pode ser + add statement)_
+![(pode ser + add statement)](https://cdn-images-1.medium.com/max/2000/1*--_ug30DZG5lM_FSuP0ASw.png)
+
+_(pode ser + add statement)_
 
 O botão abre um formulário genérico para inserir as informações. A primeira informação é que a Jaque é um ser humano. Para isso, começamos a digitar “instancia de” na sessão de propriedades e selecionamos a propriedade “instancia de”.
 Agora fazemos o mesmo no campo de valores, na direita, digitamos “humano” e selecionamos o item “ser humano”.
@@ -163,7 +171,9 @@ Entre eles está a Jaqueline Wang, que acabamos de adicionar ao Wikidata. Poder�
 
 ![](https://cdn-images-1.medium.com/max/2000/1*RTkn54Wxl4oHgOOgd_EgOw.png)
 
-![só clicar em Permitir](https://cdn-images-1.medium.com/max/2000/1*kGFPRiEJULPbr5Oe6uMJ7Q.png)_só clicar em Permitir_
+![só clicar em Permitir](https://cdn-images-1.medium.com/max/2000/1*kGFPRiEJULPbr5Oe6uMJ7Q.png)
+
+_só clicar em Permitir_
 
 Agora vou buscar por “Jaqueline Wang”, clicar em “Look for author” e ver o que aparece. É comum o sistema demorar *bastante *nas primeiras vezes (aproveite para ajeitar a coluna ou pegar uma água).
 
@@ -199,9 +209,13 @@ Em paralelo, fiz o mesmo para os artigos que estavam descritos como “Jaqueline
 
 Agora o [Scholia já puxa essas informações ](https://scholia.toolforge.org/author/Q106212027)e gera visualizações ricas, como a rede de coautorias e o mapa de coautores:
 
-![Mapa dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)](https://cdn-images-1.medium.com/max/2000/1*3P_ZRho-Pt5KzqeU8OKZew.png)_Mapa dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)_
+![Mapa dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)](https://cdn-images-1.medium.com/max/2000/1*3P_ZRho-Pt5KzqeU8OKZew.png)
 
-![Rede dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)](https://cdn-images-1.medium.com/max/2000/1*EVfcmKhjwrqYvLRwbz5n8w.png)_Rede dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)_
+_Mapa dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)_
+
+![Rede dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)](https://cdn-images-1.medium.com/max/2000/1*EVfcmKhjwrqYvLRwbz5n8w.png)
+
+_Rede dos coautores da [Jaqueline Wang](https://scholia.toolforge.org/author/Q106212027)_
 
 ## Passo 5: Aproveite os dados ligados
 
