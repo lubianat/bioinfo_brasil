@@ -1,0 +1,29 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example SPARQL query: 
+# SELECT ?institution WHERE { ?institution wdt:P31 wd:Q102124203. }
+
+START = @<GradProgram>
+
+<GradProgram> EXTRA wdt:P31 wdt:P749 wdt:P361 {
+  wdt:P31  [ wd:Q102124203 ] + ; # Instance of = Graduate Degree Program
+  wdt:P101 @<Discipline> + ; # Field of work 
+  wdt:P749 @<ResearchInstitute> * ; # Parent org
+  wdt:P361 @<ResearchInstitute> + ; # Part of
+}
+
+<Discipline> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q11862829 ] ? # academic discipline
+}
+
+<ResearchInstitute> EXTRA wdt:P31 {
+  wdt:P31 [
+      wd:Q7315155 # research center
+      wd:Q31855 # research institute
+      wd:Q38723 # higher education institution
+      wd:Q3847505 # university
+      wd:Q20820271 # graduate school
+  ] ?
+}
