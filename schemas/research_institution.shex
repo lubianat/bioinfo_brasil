@@ -1,0 +1,46 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E32>
+PREFIX E32: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E32#>
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E100>
+PREFIX E100: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E100#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query:
+# SELECT ?researchInstitute WHERE { ?researchInstitute wdt:P31 wd:Q31855. } LIMIT 100
+
+START = @<ResearchInstitute>
+
+<ResearchInstitute> EXTRA wdt:P31 p:P856 {
+    wdt:P31 ( @<InstituteTypes> OR @<SubInstitutes> ) + ;
+    wdt:P101 @<Discipline> * ; # Field of work 
+    wdt:P17 E32:state OR . ? ;
+    wdt:P159 E100:city OR . ? ; 
+    p:P856 @<OfficialWebsite> + ; 
+    wdt:P571 xsd:dateTime + ; # inception
+}
+
+<InstituteTypes> [
+    wd:Q7315155 # research center
+    wd:Q31855 # research institute
+    wd:Q38723 # higher education institution
+    wd:Q3847505 # university
+    wd:Q20820271 # graduate school
+] 
+
+<SubInstitutes> EXTRA wdt:P279 {
+    wdt:P279 @<InstituteTypes> ;
+}
+
+<Discipline> EXTRA wdt:P31 {
+    wdt:P31 [ wd:Q11862829 ] ? ; # academic discipline
+}
+
+<OfficialWebsite> {
+    ps:P856 IRI ;
+}
+
