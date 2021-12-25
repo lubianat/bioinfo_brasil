@@ -1,0 +1,60 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+header {
+  background: #d24d4d;
+}
+
+header div {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, serif;
+  width: 100%;
+}
+
+header div img {
+  width: 100%;
+  height: auto;
+  max-width: 426px !important;
+}
+
+header h1 {
+  color: none;
+}
+
+header h2 {
+  color: #caf3ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, serif;
+}
+
+#main-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, serif !important;
+}
+
+a.button {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#main-content {
+  width: auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #main-content {
+    width: auto;
+  }
+}
