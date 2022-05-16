@@ -1,6 +1,6 @@
 # Bioinfo Brasil - Scholia / Wikidata
 
-### \- [Visão Geral](https://lubianat.github.io/bioinfo_brasil/dashboard) - [Tutorial](https://lubianat.github.io/bioinfo_brasil/tutorial.html) -
+### \- [Visão Geral](https://lubianat.github.io/bioinfo_brasil/dashboard) - [Tutorial](https://lubianat.github.io/bioinfo_brasil/tutorial.html) - [Página no Wikidata](https://www.wikidata.org/wiki/Wikidata:WikiProject_Scholia/Bioinform%C3%A1tica_brasileira)
 
 Um projeto para mapear todo os pesquisadores brasileiros da área
 de bioinformática e conectá-los entre si através do sistema
