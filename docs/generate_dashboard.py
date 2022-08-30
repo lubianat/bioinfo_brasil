@@ -7,7 +7,7 @@ from mdutils.mdutils import MdUtils
 
 def main():
     mdFile = MdUtils(
-        file_name="docs/auto_dashboard.md",
+        file_name="docs/dashboard.md",
         title="The Landscape of Brazilian Bioinformatics",
     )
     with open("docs/dashboard.yaml", "r") as c:
@@ -18,6 +18,8 @@ def main():
             iframe = render_embedding_iframe(sparql_query)
             mdFile.new_header(1, title)
             mdFile.new_line(iframe)
+            mdFile.new_line("")
+
     mdFile.create_md_file()
 
 
@@ -33,10 +35,11 @@ def get_sparql_from_shortened_wiki_url(wiki_url):
 
 def render_embedding_iframe(query):
     url = render_embedding_url(query)
-    return f"""
-    <iframe style="width: 150%; height: 50vh; border: none;"
-    src={url}
-    referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>"""
+    return (
+        """<iframe style="width: 150%; height: 50vh; border: none;" """
+        f"""src={url} referrerpolicy="origin" """
+        """sandbox="allow-scripts allow-same-origin allow-popups"></iframe>"""
+    )
 
 
 def render_embedding_url(query):
