@@ -12,15 +12,37 @@ def main():
     )
     with open("docs/dashboard.yaml", "r") as c:
         config = yaml.load(c.read(), Loader=yaml.FullLoader)
-    for query in config["queries"]:
-        if query is not None:
-            title, sparql_query = get_sparql_from_shortened_wiki_url(query)
-            iframe = render_embedding_iframe(sparql_query)
-            mdFile.new_header(1, title)
-            mdFile.new_line(iframe)
-            mdFile.new_line("")
+    for category in config["queries"]:
+        if category == "general":
+            mdFile.new_header(1, "Overview")
+
+            for query in config["queries"]["general"]:
+                if query is not None:
+                    update_markdown(mdFile, query)
+
+        if category == "software":
+            mdFile.new_header(1, "Brazilian bioinformatics software")
+
+            for query in config["queries"]["software"]:
+                if query is not None:
+                    update_markdown(mdFile, query)
+
+        if category == "thesis":
+            mdFile.new_header(1, "University of São Paulo Bioinformatics theses")
+
+            for query in config["queries"]["thesis"]:
+                if query is not None:
+                    update_markdown(mdFile, query)
 
     mdFile.create_md_file()
+
+
+def update_markdown(mdFile, query):
+    title, sparql_query = get_sparql_from_shortened_wiki_url(query)
+    iframe = render_embedding_iframe(sparql_query)
+    mdFile.new_header(2, title)
+    mdFile.new_line(iframe)
+    mdFile.new_line("")
 
 
 def get_sparql_from_shortened_wiki_url(wiki_url):
@@ -37,7 +59,7 @@ def render_embedding_iframe(query):
     url = render_embedding_url(query)
     return (
         """<iframe style="width: 150%; height: 50vh; border: none;" """
-        f"""src={url} referrerpolicy="origin" """
+        f"""src="{url}" referrerpolicy="origin" """
         """sandbox="allow-scripts allow-same-origin allow-popups"></iframe>"""
     )
 
