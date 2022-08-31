@@ -58,7 +58,7 @@ def get_sparql_from_shortened_wiki_url(wiki_url):
 def render_embedding_iframe(query):
     url = render_embedding_url(query)
     return (
-        """<iframe style="width: 150%; height: 50vh; border: none;" """
+        """<iframe style="width: 80%; height: 50vh; border: none;" """
         f"""src="{url}" referrerpolicy="origin" """
         """sandbox="allow-scripts allow-same-origin allow-popups"></iframe>"""
     )
