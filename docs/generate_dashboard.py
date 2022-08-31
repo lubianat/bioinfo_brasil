@@ -50,6 +50,7 @@ def get_sparql_from_shortened_wiki_url(wiki_url):
 
     full_uri = session.head(wiki_url, allow_redirects=True).url
     sparql_query = urllib.parse.unquote(full_uri.split(".org/")[-1])
+    sparql_query = sparql_query.replace("embed.html#", "")
     title_search = re.search("title:(.*)\n", sparql_query, re.IGNORECASE)
     title = title_search.group(1)
     return title, sparql_query
