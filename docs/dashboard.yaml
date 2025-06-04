@@ -3,10 +3,12 @@ queries:
     - https://w.wiki/5dpU # Institutions related to Brazilian bioinformaticians (does not need federation)
     - https://w.wiki/EMkw # Bioinformaticians that were/are on Brazil (federated)
     - https://w.wiki/EMme # Recent articles (federated, but some issues)
-    - https://w.wiki/5drP # Common topics
-    - https://w.wiki/5drR # Gender distribution
+    - https://w.wiki/ENrB # Common topics (federated)
+    - https://w.wiki/5drR # Gender distribution (does not need federation)
   software:
-    - https://w.wiki/5d$Y #title: Brazilian bioinformatics software
+  # All these queries are currently timing out both on Wikidata and when integrating federation. 
+  # They run smoothly on QLever
+    - https://w.wiki/5d$Y # title: Brazilian bioinformatics software, query times out on Wikidata. QLever: 
     - https://w.wiki/5Ws9 # journals where they are published
     - https://w.wiki/5d$i # Bioconductor packages with Brazilian authors
     - https://w.wiki/5d$m # Bioinformatics databases

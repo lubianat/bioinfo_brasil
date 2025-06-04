@@ -24,12 +24,12 @@ def main():
                 if query is not None:
                     update_markdown(mdFile, query)
 
-        if category == "software":
-            mdFile.new_header(1, "Brazilian bioinformatics software")
+        # if category == "software":
+        #     mdFile.new_header(1, "Brazilian bioinformatics software")
 
-            for query in config["queries"]["software"]:
-                if query is not None:
-                    update_markdown(mdFile, query)
+        #     for query in config["queries"]["software"]:
+        #         if query is not None:
+        #             update_markdown(mdFile, query)
 
         if category == "thesis":
             mdFile.new_header(1, "University of São Paulo Bioinformatics theses")
