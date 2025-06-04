@@ -7,18 +7,20 @@ queries:
     - https://w.wiki/5drR # Gender distribution (does not need federation)
   software:
   # All these queries are currently timing out both on Wikidata and when integrating federation. 
-  # They run smoothly on QLever
-    - https://w.wiki/5d$Y # title: Brazilian bioinformatics software, query times out on Wikidata. QLever: 
+  # They have been excluded from the dashboard.
+  # They run smoothly on QLever.
+    - https://w.wiki/5d$Y # title: Brazilian bioinformatics software, query times out on WDQS.
     - https://w.wiki/5Ws9 # journals where they are published
     - https://w.wiki/5d$i # Bioconductor packages with Brazilian authors
     - https://w.wiki/5d$m # Bioinformatics databases
 
   thesis:
-    - https://w.wiki/5d$U # Thesis on Wiki
-    - https://w.wiki/5e2C # Topics
-    - https://w.wiki/EMm9 # Thesis by size (federated)
-    - https://w.wiki/5b94
-    - https://w.wiki/5b96
-    - https://w.wiki/5b98
-    - https://w.wiki/5b9S 
+    - https://w.wiki/ENra  # Thesis on Wiki
+ #   - https://w.wiki/5e2C # Topics of thesis (removed, federation https://w.wiki/ENrc leads to timeouts)
+    - https://w.wiki/EMm9  # Thesis by size (federated)
+    - https://w.wiki/ENs2  # Average thesis size (federated)
+    - https://w.wiki/ENrm  # Most present committeee members (federated)
+    - https://w.wiki/ENro  # Most co-participations in thesis committees (federated)
+    # URL shortening fails for the below; network of co-participation in thesis committees
+    - https://query.wikidata.org/#%23defaultView%3AGraph%0A%23title%3A%20Rede%20de%20co-participa%C3%A7%C3%A3o%20em%20bancas%20do%20programa%20de%20bioinfo%20USP%20%28colorindo%20afiliados%20ao%20programa%29%0ASELECT%20DISTINCT%20%0A%3Fcommittee_member1%20%3Fcommittee_member1Label%20%3Frgb%20%3Fimg1%0A%3Fcommittee_member2%20%3Fcommittee_member2Label%20%3Frgb2%20%3Fimg2%0A%28COUNT%28DISTINCT%20%3Fitem%29%20as%20%3Fcount%29%0AWHERE%20%0A%7B%0A%20%20SERVICE%20wdsubgraph%3Ascholarly_articles%20%7B%0A%20%20%3Fitem%20p%3AP4101%20%3Fstatement%20.%20%0A%20%20%3Fstatement%20ps%3AP4101%20wd%3AQ835960%20.%20%0A%20%20%3Fstatement%20pq%3AP9945%20wd%3AQ102292035%20.%20%0A%20%20%3Fitem%20wdt%3AP9161%20%3Fcommittee_member1%20.%20%20%0A%20%20%3Fitem%20wdt%3AP9161%20%3Fcommittee_member2%20.%20%0A%20FILTER%28%3Fcommittee_member2%20%21%3D%20%3Fcommittee_member1%29%20%0A%20%7D%0A%20%20OPTIONAL%7B%0A%20%20%20%20VALUES%20%3Faffiliation%20%7Bwd%3AQ102292035%7D%0A%20%20%20%20%3Fcommittee_member1%20wdt%3AP1416%20%3Faffiliation%20.%7D%20%0A%20%20BIND%28if%28%3Faffiliation%20%3D%20%20wd%3AQ102292035%2C%20%220082a3%22%2C%20%22000000%22%29%20as%20%3Frgb%29%0A%20%20%0A%20%20OPTIONAL%7B%0A%20%20%20%20VALUES%20%3Faffiliation2%20%7Bwd%3AQ102292035%7D%0A%20%20%20%20%3Fcommittee_member2%20wdt%3AP1416%20%3Faffiliation2.%7D%20%20%0A%20%20BIND%28if%28%3Faffiliation2%20%3D%20%20wd%3AQ102292035%2C%20%220082a3%22%2C%20%22000000%22%29%20as%20%3Frgb2%29%0A%0A%20FILTER%28%3Fcommittee_member2%20%21%3D%20%3Fcommittee_member1%29%20%0A%0A%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%0A%20%23%20Heuristic%20to%20remove%20duplicates%0A%20FILTER%20%28xsd%3Ainteger%28STRAFTER%28STR%28%3Fcommittee_member2%29%2C%20%22http%3A%2F%2Fwww.wikidata.org%2Fentity%2FQ%22%29%29%20%3E%20xsd%3Ainteger%28STRAFTER%28STR%28%3Fcommittee_member1%29%2C%20%22http%3A%2F%2Fwww.wikidata.org%2Fentity%2FQ%22%29%29%29%0A%7D%0AGROUP%20BY%0A%3Fcommittee_member1%20%3Fcommittee_member1Label%20%3Frgb%20%3Fimg1%0A%3Fcommittee_member2%20%3Fcommittee_member2Label%20%3Frgb2%20%3Fimg2%0AORDER%20BY%20%0A%20%20DESC%28%3Fcount%29
 

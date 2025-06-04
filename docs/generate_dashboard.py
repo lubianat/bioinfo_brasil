@@ -42,6 +42,7 @@ def main():
 
 
 def update_markdown(mdFile, query):
+    print(query)
     title, sparql_query = get_sparql_from_shortened_wiki_url(query)
     iframe = render_embedding_iframe(sparql_query)
     mdFile.new_header(2, title)
